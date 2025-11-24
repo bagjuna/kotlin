@@ -13,13 +13,14 @@ fun main() {
 
 
     // 파일에 쓰기
-    val fos = FileOutputStream(TextConst.FILE_NAME)
-//    OutputStreamWriter(fos, UTF_8).use { writer ->
-//        writer.write(writeString)
-//    }
+    val fos = FileOutputStream(FILE_NAME)
     val osw = OutputStreamWriter(fos, UTF_8)
     osw.write(writeString)
     osw.close()
+
+//    OutputStreamWriter(fos, UTF_8).use { writer ->
+//        writer.write(writeString)
+//    }
 
     // 파일에서 읽기
 //    val fis = FileInputStream(FILE_NAME)
@@ -27,7 +28,7 @@ fun main() {
 //        val readString = reader.readText()
 //        println("read String: $readString")
 //    }
-
+    
     val fis = FileInputStream(FILE_NAME)
     val isr = InputStreamReader(fis, UTF_8)
     val content = StringBuilder()
