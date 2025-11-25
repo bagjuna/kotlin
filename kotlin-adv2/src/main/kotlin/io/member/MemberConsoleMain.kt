@@ -1,12 +1,14 @@
 package hello.io.member
 
+import hello.io.member.impl.DataMemberRepository
 import hello.io.member.impl.FileMemberRepository
 import hello.io.member.impl.MemoryMemberRepository
 import java.util.*
 
 
 //val repository: MemberRepository = MemoryMemberRepository()
-val repository: MemberRepository = FileMemberRepository()
+//val repository: MemberRepository = FileMemberRepository()
+val repository: MemberRepository = DataMemberRepository()
 
 fun main() {
 
