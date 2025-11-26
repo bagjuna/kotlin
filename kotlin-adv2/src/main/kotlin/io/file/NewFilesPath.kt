@@ -4,7 +4,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 fun main() {
-    val path = Path.of("src/main/kotlin/temp/..")
+    val path = Path.of("temp/..")
 
     println("path = $path")
 

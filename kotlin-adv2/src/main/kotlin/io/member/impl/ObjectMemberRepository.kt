@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream
 
 class ObjectMemberRepository : MemberRepository {
     companion object {
-        private const val FILE_PATH = "src/main/kotlin/temp/members-object.dat"
+        private const val FILE_PATH = "temp/members-object.dat"
     }
 
     override fun add(member: Member) {

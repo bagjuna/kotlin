@@ -4,8 +4,8 @@ import java.io.File
 
 fun main() {
 
-    val file = File("src/main/kotlin/temp/example.txt")
-    val directory = File("src/main/kotlin/temp/exampleDir")
+    val file = File("temp/example.txt")
+    val directory = File("temp/exampleDir")
 
     println("File Exists: ${file.exists()}")
 
@@ -26,7 +26,7 @@ fun main() {
     println("File Name: ${file.name} ")
     println("File size: ${file.length()} bytes ")
 
-    val newFile = File("src/main/kotlin/temp/newExample.txt")
+    val newFile = File("temp/newExample.txt")
     val renamed = file.renameTo(newFile)
     println("File Renamed: $renamed")
 

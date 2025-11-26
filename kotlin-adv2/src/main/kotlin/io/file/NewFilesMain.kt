@@ -6,8 +6,8 @@ import java.nio.file.Path
 import java.nio.file.attribute.BasicFileAttributes
 
 fun main() {
-    val file = Path.of("src/main/kotlin/temp/example.txt")
-    val directory = Path.of("src/main/kotlin/temp/exampleDir")
+    val file = Path.of("temp/example.txt")
+    val directory = Path.of("temp/exampleDir")
 
     println("File exists: ${Files.exists(file)}")
 
@@ -41,7 +41,7 @@ fun main() {
     println("File name: ${file.fileName} ")
     println("File size: ${Files.size(file)} bytes ")
 
-    val newFile = Path.of("src/main/kotlin/temp/newExample.txt")
+    val newFile = Path.of("temp/newExample.txt")
     Files.move(file, newFile)
 
     println("File renamed: ${Files.exists(newFile)}" )

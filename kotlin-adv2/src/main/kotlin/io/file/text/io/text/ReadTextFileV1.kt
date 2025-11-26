@@ -6,7 +6,7 @@ import java.nio.file.Path
 
 fun main() {
 
-    val PATH = "src/main/kotlin/temp/hello2.txt"
+    val PATH = "temp/hello2.txt"
     val writeString = "abc\n가나다"
     println("== Write String ==")
     println(writeString)

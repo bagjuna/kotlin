@@ -9,7 +9,7 @@ import java.io.FileReader
 import java.io.FileWriter
 import kotlin.text.Charsets.UTF_8
 
-const val FILE_PATH = "src/main/kotlin/temp/members-txt.dat"
+const val FILE_PATH = "temp/members-txt.dat"
 const val DELIMITER = ','
 
 class FileMemberRepository: MemberRepository {

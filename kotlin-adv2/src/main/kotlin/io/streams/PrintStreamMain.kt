@@ -5,7 +5,7 @@ import java.io.PrintStream
 
 fun main() {
 
-    FileOutputStream("src/main/kotlin/temp/print.txt")
+    FileOutputStream("temp/print.txt")
         .use { fos ->
             val printStream = PrintStream(fos)
 

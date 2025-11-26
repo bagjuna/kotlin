@@ -6,8 +6,8 @@ import java.io.FileOutputStream
 fun main() {
     val startTime = System.currentTimeMillis()
 
-    val fis = FileInputStream("src/main/kotlin/temp/copy.dat")
-    val fos = FileOutputStream("src/main/kotlin/temp/copy_copy.dat")
+    val fis = FileInputStream("temp/copy.dat")
+    val fos = FileOutputStream("temp/copy_copy.dat")
 
     val bytes = fis.readAllBytes()
     fos.write(bytes)

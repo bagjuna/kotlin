@@ -12,7 +12,7 @@ import java.io.FileOutputStream
 class DataMemberRepository: MemberRepository {
     companion object {
         // const val = 컴파일 타임 상수 (진짜 static final)
-        private const val FILE_PATH = "src/main/kotlin/temp/members-data.dat"
+        private const val FILE_PATH = "temp/members-data.dat"
     }
     override fun add(member: Member) {
         DataOutputStream(FileOutputStream(FILE_PATH,true)).use { dos ->

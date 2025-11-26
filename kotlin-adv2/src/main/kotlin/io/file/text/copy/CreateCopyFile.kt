@@ -6,7 +6,7 @@ import java.io.FileOutputStream
 fun main() {
     val FILE_SIZE = 200 * 1024 * 1024 // 200MB
 
-    val fileName = "src/main/kotlin/temp/copy.dat"
+    val fileName = "temp/copy.dat"
     val startTime = System.currentTimeMillis()
 
 //    FileOutputStream(fileName).use {

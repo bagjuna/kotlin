@@ -4,7 +4,7 @@ import java.io.File
 
 
 fun main() {
-    val file = File("src/main/kotlin/temp/..")
+    val file = File("temp/..")
     println("path = " + file.path)
 
     // 절대 경로

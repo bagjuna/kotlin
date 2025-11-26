@@ -45,7 +45,7 @@ bin/
 .DS_Store
 /.idea/vcs.xml
 /.idea/misc.xml
-/src/main/kotlin/temp/**
+/temp/**
 /gradle.properties
 /.idea/gradle.xml
 /gradle/wrapper/gradle-wrapper.jar
