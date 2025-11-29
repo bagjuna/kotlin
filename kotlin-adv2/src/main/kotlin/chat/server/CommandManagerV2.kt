@@ -5,7 +5,9 @@ import java.io.IOException
 
 class CommandManagerV2(private val sessionManager: SessionManager) : CommandManager {
 
-    val DELIMITER = "|"
+    companion object {
+        private const val DELIMITER = "|"
+    }
     override fun execute(totalMessage: String, session: Session) {
 
         // /join|juna
@@ -49,7 +51,9 @@ class CommandManagerV2(private val sessionManager: SessionManager) : CommandMana
             totalMessage.startsWith("/exit") -> {
                 throw IOException("exit")
             }
-
+            else -> {
+                session.send("처리할 수 없는 명령어입니다: $totalMessage")
+            }
         }
 
     }
