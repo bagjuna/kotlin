@@ -2,16 +2,19 @@ package hello.chat.server
 
 import hello.chat.server.command.ChangeCommand
 import hello.chat.server.command.Command
+import hello.chat.server.command.DefaultCommand
 import hello.chat.server.command.ExitCommand
 import hello.chat.server.command.JoinCommand
 import hello.chat.server.command.MessageCommand
 import hello.chat.server.command.UsersCommand
 
-class CommandManagerV3(private val sessionManager: SessionManager) : CommandManager {
+class CommandManagerV4(private val sessionManager: SessionManager) : CommandManager {
 
     companion object {
         private const val DELIMITER = "|"
+        private val defaultCommand = DefaultCommand()
     }
+
 
     private val commands: Map<String, Command> = mapOf(
         "/join" to JoinCommand(sessionManager),
@@ -27,11 +30,11 @@ class CommandManagerV3(private val sessionManager: SessionManager) : CommandMana
         val args = totalMessage.split(DELIMITER)
         val key = args[0]
 
-        val command = commands[key]
+        // NullObject 패턴
+        val command = commands[key] ?: defaultCommand
+        command.execute(args, session)
 
-        command?.execute(args, session) ?: run {
-            session.send("알 수 없는 명령어입니다: $key")
-        }
+
 
     }
 }

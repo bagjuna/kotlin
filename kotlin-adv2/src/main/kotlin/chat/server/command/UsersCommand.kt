@@ -5,7 +5,7 @@ import hello.chat.server.SessionManager
 
 class UsersCommand(private val sessionManager: SessionManager) : Command {
 
-    override fun execute(args: Array<String>, session: Session) {
+    override fun execute(args: List<String>, session: Session) {
         val usernames = sessionManager.getAllUsernames()
 
 //        val sb = StringBuilder()

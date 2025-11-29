@@ -5,7 +5,7 @@ import hello.chat.server.SessionManager
 
 class ChangeCommand(private val sessionManager: SessionManager) : Command {
 
-    override fun execute(args: Array<String>, session: Session) {
+    override fun execute(args: List<String>, session: Session) {
         val oldUsername = session.username
         val newUsername = args[1]
         session.username = newUsername
