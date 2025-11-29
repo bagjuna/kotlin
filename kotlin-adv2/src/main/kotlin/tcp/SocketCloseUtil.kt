@@ -2,10 +2,6 @@ package hello.tcp
 
 import hello.util.MyLogger.log
 import java.io.Closeable
-import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
-import java.net.Socket
 
 
 object SocketCloseUtil {
