@@ -12,19 +12,26 @@ class Client(
     private val host: String,
     private val port: Int,
 ) {
-    val socket = Socket(host, port)
-    val input = DataInputStream(socket.getInputStream())
-    val output = DataOutputStream(socket.getOutputStream())
-    var readHandler = ReadHandler(input, this)
-    var writeHandler = WriteHandler(output, this)
+    private lateinit var socket: Socket
+    private lateinit var input: DataInputStream
+    private lateinit var output: DataOutputStream
+    private lateinit var readHandler: ReadHandler
+//    var writeHandler = WriteHandler(output, this)
+    private lateinit var writeHandler: WriteHandler
     var closed = false
 
     fun start() {
         log("클라이언트 시작")
-        val readHandler = Thread(readHandler, "readHandler")
-        val writeHandler = Thread(writeHandler, "writeHandler")
-        readHandler.start()
-        writeHandler.start()
+        socket = Socket(host, port)
+        input = DataInputStream(socket.getInputStream())
+        output = DataOutputStream(socket.getOutputStream())
+
+        readHandler = ReadHandler(input, this)
+        writeHandler = WriteHandler(output, this)
+        Thread(readHandler).start()
+        Thread(writeHandler).start()
+//        readHandler.start()
+//        writeHandler.start()
     }
 
     @Synchronized

@@ -38,7 +38,7 @@ class SessionManager {
     }
 
     @Synchronized
-    fun getUserNames(): List<String> {
+    fun getAllUsernames(): List<String> {
         return sessions.map { it.username }
 
     }
