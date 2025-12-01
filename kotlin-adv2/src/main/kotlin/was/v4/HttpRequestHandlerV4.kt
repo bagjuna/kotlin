@@ -84,6 +84,7 @@ class HttpRequestHandlerV4(private val socket: Socket) : Runnable {
     }
 
     private fun notFound(response: HttpResponse) {
+        response.statusCode = 404 // 상태 코드 변경!
         response.writeBody("<h1>404 페이지를 찾을 수 없습니다.</h1>")
     }
 

@@ -5,7 +5,7 @@ import java.io.PrintWriter
 class HttpResponse(
     private val writer: PrintWriter,
 ) {
-    private val statusCode = 200
+    var statusCode = 200
     private val bodyBuilder = StringBuilder()
     private var contentType: String? = "text/html; charset=UTF-8"
 

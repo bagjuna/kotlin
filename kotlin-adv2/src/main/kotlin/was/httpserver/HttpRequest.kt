@@ -10,7 +10,7 @@ class HttpRequest(
 ) {
     var method: String = ""
     var path: String = ""
-
+    var statusCode = 200 // private 제거 또는 set 메서드 추가
     // q=hello&key2=value298
     val queryParameters = mutableMapOf<String, String>()
     val headers = mutableMapOf<String, String>()
@@ -56,8 +56,12 @@ class HttpRequest(
     private fun parseHeaders(reader: BufferedReader) {
         var line: String?
         while (!(reader.readLine().also { line = it }).isEmpty()) {
-            val headerParts = line!!.split(":").toMutableList()
-            headers[headerParts[0]] = headerParts[1].trim()
+            // val headerParts = line!!.split(":").toMutableList()
+            // headers[headerParts[0]] = headerParts[1].trim()
+            val headerParts = line!!.split(":", limit = 2)
+            if (headerParts.size == 2) {
+                headers[headerParts[0].trim()] = headerParts[1].trim()
+            }
         }
     }
 
