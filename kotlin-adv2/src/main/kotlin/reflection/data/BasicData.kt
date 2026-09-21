@@ -1,5 +1,8 @@
 package hello.reflection.data
 
+import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.full.memberProperties
+
 
 open class BasicData {
 
@@ -38,5 +41,32 @@ open class BasicData {
 
     protected fun protectedMethod() {
         println("BasicData.protectedMethod")
+    }
+}
+
+class Calculator {
+    fun add(a: Int, b: Int): Int {
+        return a + b
+    }
+
+    fun subtract(a: Int, b: Int): Int {
+        return a - b
+    }
+}
+
+fun main() {
+    val helloClass = BasicData::class
+
+    println("==== fields ====")
+    /*Field[]*/
+    val fields = helloClass.memberProperties
+    for (field in fields) {
+        println("field: $field")
+    }
+
+    println("==== declared fields ====")
+    val declaredFields = helloClass.declaredMemberProperties
+    for (field in declaredFields) {
+        println("declared field: $field")
     }
 }
